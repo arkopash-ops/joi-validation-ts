@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connectDB = async (): Promise<void> => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/zod-user");
+        await mongoose.connect("mongodb://localhost:27017/joi-user");
         console.log(`MongoDB Connected.`);
     } catch (error) {
         console.error("MongoDB connection error:", error);
