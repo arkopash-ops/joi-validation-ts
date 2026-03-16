@@ -52,20 +52,19 @@ joi-validation-api
 
 The API demonstrates the following Joi validation types:
 
-| Validation Type   | Example Field         |
-| ----------------- | --------------------- |
-| string            | name                  |
-| email             | email                 |
-| number            | age                   |
-| boolean           | isActive              |
-| valid / enum      | role                  |
-| array             | hobbies               |
-| object            | address               |
-| optional          | bio                   |
-| default           | createdAt             |
-| min / max         | username              |
-| regex             | phone                 |
-| custom validation | password confirmation |
+| Validation    | Example              |
+| ------------- | -------------------- |
+| string        | Joi.string()         |
+| number        | Joi.number()         |
+| boolean       | Joi.boolean()        |
+| email         | Joi.string().email() |
+| regex         | pattern()            |
+| enum          | valid()              |
+| array         | Joi.array()          |
+| nested object | Joi.object()         |
+| date          | Joi.date()           |
+| custom        | Joi.ref()            |
+
 
 
 ---
@@ -85,6 +84,37 @@ The API demonstrates the following Joi validation types:
 
 # API Endpoints
 
+### 1. Create User
+```http
+POST http://localhost:8080/api/users/create
+content-type: application/json
+
+{
+  "name": "ARK",
+  "email": "ark@mail.com",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "age": 25,
+  "role": "admin",
+  "phone": "9876543210",
+  "skills": [
+    "Node",
+    "TypeScript"
+  ],
+  "isActive": true,
+  "address": {
+    "street": "MG Road",
+    "city": "Surat",
+    "zipCode": "395007"
+  }
+}
+```
+
+### 2. Get All Users
+```http
+GET http://localhost:8080/api/users/getUsers
+content-type: application/json
+```
 
 
 ---

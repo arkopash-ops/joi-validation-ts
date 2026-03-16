@@ -1,0 +1,27 @@
+POST http://localhost:8080/api/users/create
+content-type: application/json
+
+{
+  "name": "ARK",
+  "email": "ark@mail.com",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "age": 25,
+  "role": "admin",
+  "phone": "9876543210",
+  "skills": [
+    "Node",
+    "TypeScript"
+  ],
+  "isActive": true,
+  "address": {
+    "street": "MG Road",
+    "city": "Surat",
+    "zipCode": "395007"
+  }
+}
+
+
+###
+GET http://localhost:8080/api/users/getUsers
+content-type: application/json
