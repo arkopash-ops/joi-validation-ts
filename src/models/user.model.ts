@@ -1,7 +1,8 @@
 import mongoose, { Schema, Document } from "mongoose";
-import { UserRole, type User } from "../types/user.types.js";
+import { UserRole } from "../types/user.types.js";
+import type { User as IUser} from "../types/user.types.js";
 
-export interface UserDocument extends User, Document { }
+export interface UserDocument extends IUser, Document { }
 
 const addressSchema = new Schema({
     street: { type: String },
